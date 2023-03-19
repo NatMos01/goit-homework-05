@@ -57,7 +57,6 @@ img {
 	display: flex;
 	margin-left: auto;
 	gap: 40px;
-	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .title-cover {
 	display: none;
@@ -78,6 +77,8 @@ li {
 	text-decoration: none;
 }
 .page-header {
+	position: fixed;
+	width: 100%;
 	padding-top: 24px;
 	padding-bottom: 24px;
 	background-color: var(--primary-white-color);
@@ -93,35 +94,25 @@ li {
 	align-items: center;
 }
 .menu {
-	font-weight: 500;
-	font-size: 16px;
-	line-height: 1.5;
-	letter-spacing: 0.02em;
 	display: flex;
 	align-items: center;
 	margin-left: auto;
 	margin-right: auto;
 	gap: 40px;
-	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .menu-item:not(:last-child) {
 }
 
-.menu a:active {
+.nav a:active {
 	color: var(--fiter-background-active-color);
 }
 
-.menu a:hover {
-	color: var(--fiter-background-active-color);
-}
-
-.menu a:focus {
+.nav a:focus {
 	color: var(--fiter-background-active-color);
 }
 
 .menu-item {
 	position: relative;
-	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .menu-item::after {
 	content: "";
@@ -141,6 +132,10 @@ li {
 
 .menu-item:hover::after {
 	opacity: 1;
+}
+.link {
+	font-weight: 500;
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .logo-primary,
 .logo-primary-footer {
@@ -172,6 +167,7 @@ li {
 .header-address:hover,
 .header-address:focus {
 	color: var(--primary-links-color);
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero {
 	padding: 188px 0px;
@@ -382,6 +378,7 @@ li {
 .customer-link:focus {
 	color: #404bbf;
 	border-color: #404bbf;
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .section-title {
 	margin-bottom: 72px;
@@ -473,7 +470,7 @@ li {
 	letter-spacing: 0.04em;
 	cursor: pointer;
 	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-		box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+		box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filters:not(:last-child) {
 	margin-right: 24px;
@@ -484,14 +481,15 @@ li {
 	background-color: var(--primary-links-color);
 	color: var(--primary-white-color);
 	box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-	border-radius: 4px;
 }
 .portfolio-list-item-link {
 	display: block;
+	text-decoration: none;
 }
 .portfolio-list-item-link:hover,
 .portfolio-list-item-link:focus {
 	box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+	transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .projects {
@@ -511,7 +509,6 @@ li {
 	border: 1px solid #e7e9fc;
 	border-top: none;
 	padding: 32px 16px;
-
 	transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-item-img {
@@ -526,9 +523,8 @@ li {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	overflow-y: scroll;
 	transform: translateY(100%);
-	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 	letter-spacing: 0.02em;
 	color: #f4f4fd;
 	background-color: var(--primary-links-color);
@@ -541,12 +537,11 @@ li {
 	vertical-align: top;
 }
 
-.portfolio-list-item:hover .overlay,
-.portfolio-list-item:focus-within .overlay,
-.portfolio-list-item:active .overlay {
+.portfolio-list-item-link:hover .overlay,
+.portfolio-list-item-link:focus-within .overlay,
+.portfolio-list-item-link:active .overlay {
 	opacity: 1;
 	transform: translateY(0);
-	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*modal*/
